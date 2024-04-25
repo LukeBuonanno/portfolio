@@ -1,16 +1,6 @@
 html {
     height: 100%;
     width: 100%;
-    .documents-container
 
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.document {
-    width: 48%; /* Adjust as needed */
-}
 
 }
