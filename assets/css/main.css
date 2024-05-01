@@ -1718,6 +1718,14 @@ input, select, textarea {
 	transition: background-color 0.3s ease;
 }
 
+.prev {
+	left: 0;
+}
+
+.next {
+	right: 0;
+}
+
 	.prev:hover, .next:hover {
 		background-color: rgba(0, 0, 0, 0.8);
 	}
@@ -1741,3 +1749,4 @@ input, select, textarea {
 h3 {
 	margin-top: 0;
 }
+
