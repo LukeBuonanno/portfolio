@@ -1730,11 +1730,14 @@ input, select, textarea {
 .slide {
 	flex: 0 0 auto;
 	width: 100%;
-	padding: 20px;
 	box-sizing: border-box;
+}
+
+.pdf-container {
+	width: 100%;
+	height: 400px; /* Adjust the height as needed */
 }
 
 h3 {
 	margin-top: 0;
 }
-
