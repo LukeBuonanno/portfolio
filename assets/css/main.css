@@ -1699,3 +1699,16 @@ input, select, textarea {
 	.button:hover {
 		background-color: #0056b3; /* Change the hover background color if needed */
 	}
+
+#header .carousel button {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0.5rem; /* Adjust margin as needed */
+}
+
+@media screen and (max-width: 480px) {
+	#header .carousel button {
+		display: block;
+		margin: 0.5rem auto; /* Adjust margin as needed */
+	}
+}
