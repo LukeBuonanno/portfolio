@@ -50,7 +50,7 @@
 
                         .grid-item {
                             position: relative;
-                            border: 1px solid rgba(0, 0, 0, 0.2); /* Slightly clear grey border */
+                            border: 10px solid rgba(0, 0, 0, 0.5); /* Slightly clear grey border */
                             border-radius: 10px; /* Rounded borders */
                             padding: 10px;
                             transition: transform 0.3s ease;
@@ -84,7 +84,7 @@
                             background-color: rgba(0, 0, 0, 0.5);
                             color: #fff;
                             border: none;
-                            padding: 5px 10px;
+                            padding: 10px 10px;
                             cursor: pointer;
                         }
 
@@ -118,9 +118,7 @@
                                     iframe.classList.add('pdf-preview');
                                     iframe.src = url;
 
-                                    const previewImage = document.createElement('img');
-                                    previewImage.classList.add('preview-image');
-                                    previewImage.src = `generatePreviewImage.php?url=${encodeURIComponent(url)}`;
+                                  
 
                                     const caption = document.createElement('div');
                                     caption.classList.add('caption');
