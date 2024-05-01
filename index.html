@@ -29,17 +29,17 @@
             text-align: center;
         }
 
-            .grid-item.enlarged {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 9999;
-                background-color: rgba(255, 255, 255, 0.9);
-                border-radius: 0;
-                padding: 20px;
-            }
+        .grid-item.enlarged {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 0;
+            padding: 20px;
+        }
 
         .pdf-preview {
             width: 100%;
@@ -67,18 +67,174 @@
         }
     </style>
 </head>
-<body>
-    <div class="grid-container" id="grid-container"></div>
+
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <header id="header">
+            <div class="logo">
+                <span class="icon fa-gem"></span>
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <h1>Luke Buonanno's Portfolio</h1>
+                </div>
+            </div>
+
+            <body>
+                <div class="grid-container" id="grid-container"></div>
+
+                <script>
+                    const pdfUrls = [
+                        'loi.pdf',
+                        'resume.pdf',
+                    ];
+
+                    // Function to create grid items
+                    function createGridItems() {
+                        const gridContainer = document.getElementById('grid-container');
+                        pdfUrls.forEach((url, index) => {
+                            const gridItem = document.createElement('div');
+                            gridItem.classList.add('grid-item');
+
+                            const iframe = document.createElement('iframe');
+                            iframe.classList.add('pdf-preview');
+                            iframe.src = url;
+
+                            const previewImage = document.createElement('img');
+                            previewImage.classList.add('preview-image');
+                            previewImage.src = `generatePreviewImage.php?url=${encodeURIComponent(url)}`;
+
+                            const caption = document.createElement('div');
+                            caption.classList.add('caption');
+                            caption.textContent = `PDF ${index + 1}`;
+
+                            gridItem.appendChild(iframe);
+                            gridItem.appendChild(previewImage);
+                            gridItem.appendChild(caption);
+                            gridContainer.appendChild(gridItem);
+
+                            // Add click event listener to each grid item
+                            gridItem.addEventListener('click', () => {
+                                if (!gridItem.classList.contains('enlarged')) {
+                                    gridItem.classList.add('enlarged');
+                                    const closeBtn = document.createElement('button');
+                                    closeBtn.classList.add('close-btn');
+                                    closeBtn.textContent = 'X';
+                                    closeBtn.addEventListener('click', () => {
+                                        gridItem.classList.remove('enlarged');
+                                        closeBtn.remove();
+                                    });
+                                    document.body.appendChild(closeBtn);
+                                }
+                            });
+                        });
+                    }
+
+                    // Call the function to create grid items
+                    createGridItems();
+                </script>
+    </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#experiance">Influential Experience</a></li>
+            <li><a href="#documents">Academic Documents</a></li>
+            <li><a href="#service">Community Service</a></li>
+            <li><a href="#work">Scholarly Work</a></li>
+            <li><a href="#accomplishments">Accomplishments</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <div id="main">
+
+        <article id="experiance">
+            <h2 class="major">Influential Experience</h2>
+            <div class="pdf-grid-container" id="pdf-grid-container-experience"></div>
+            <!-- Rest of the article content -->
+            <p>paragraph 1</p>
+            <p>paragraph 2</p>
+        </article>
+
+        <article id="documents">
+            <h2 class="major">Academic Documents</h2>
+            <div class="pdf-grid-container" id="pdf-grid-container-documents"></div>
+            <!-- Rest of the article content -->
+            <p>paragraph 1</p>
+            <p>paragraph 2</p>
+        </article>
+
+        <article id="service">
+            <h2 class="major">Community Service</h2>
+            <div class="pdf-grid-container" id="pdf-grid-container-service"></div>
+            <!-- Rest of the article content -->
+            <p>Paragraph 1</p>
+        </article>
+
+        <article id="work">
+            <h2 class="major">Scholarly Work</h2>
+            <div class="pdf-grid-container" id="pdf-grid-container-work"></div>
+            <!-- Rest of the article content -->
+            <p>Paragraph 1</p>
+        </article>
+
+        <article id="accomplishments">
+            <h2 class="major">Accomplishments</h2>
+            <div class="pdf-grid-container" id="pdf-grid-container-accomplishments"></div>
+            <!-- Rest of the article content -->
+            <p>Paragraph 1</p>
+        </article>
+
+    </div>
+
+    <footer id="footer">
+        <p class="copyright">&copy; <a href="https://lukebuonanno.github.io/bio/">Luke Buonanno</a>.</p>
+    </footer>
+
+    </div>
+
+    <!-- BG -->
+    <div id="bg"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
 
     <script>
-        const pdfUrls = [
+        const pdfUrlsExperience = [
             'loi.pdf',
-            'resume.pdf',
+            'experience2.pdf',
+        ];
+
+        const pdfUrlsDocuments = [
+            'document1.pdf',
+            'document2.pdf',
+        ];
+
+        const pdfUrlsService = [
+            'service1.pdf',
+            'service2.pdf',
+        ];
+
+        const pdfUrlsWork = [
+            'work1.pdf',
+            'work2.pdf',
+        ];
+
+        const pdfUrlsAccomplishments = [
+            'accomplishments1.pdf',
+            'accomplishments2.pdf',
         ];
 
         // Function to create grid items
-        function createGridItems() {
-            const gridContainer = document.getElementById('grid-container');
+        function createGridItems(containerId, pdfUrls) {
+            const gridContainer = document.getElementById(containerId);
             pdfUrls.forEach((url, index) => {
                 const gridItem = document.createElement('div');
                 gridItem.classList.add('grid-item');
@@ -117,166 +273,12 @@
             });
         }
 
-        // Call the function to create grid items
-        createGridItems();
+        // Call the function to create grid items for each article
+        createGridItems('pdf-grid-container-experience', pdfUrlsExperience);
+        createGridItems('pdf-grid-container-documents', pdfUrlsDocuments);
+        createGridItems('pdf-grid-container-service', pdfUrlsService);
+        createGridItems('pdf-grid-container-work', pdfUrlsWork);
+        createGridItems('pdf-grid-container-accomplishments', pdfUrlsAccomplishments);
     </script>
-    </div>
-    </div>
-    <body class="is-preload">
-
-        <div id="wrapper">
-
-            <header id="header">
-                <div class="logo">
-                    <span class="icon fa-gem"></span>
-                </div>
-                <div class="content">
-                    <div class="inner">
-                        <h1>Luke Buonanno's Portfolio</h1>
-                    </div>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#experiance">Influential Experience</a></li>
-                        <li><a href="#documents">Academic Documents</a></li>
-                        <li><a href="#service">Community Service</a></li>
-                        <li><a href="#work">Scholarly Work</a></li>
-                        <li><a href="#accomplishments">Accomplishments</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-            <div id="main">
-
-                <article id="experiance">
-                    <h2 class="major">Influential Experience</h2>
-                    <div class="pdf-grid-container" id="pdf-grid-container-experience"></div>
-                    <!-- Rest of the article content -->
-                    <p>paragraph 1</p>
-                    <p>paragraph 2</p>
-                </article>
-
-                <article id="documents">
-                    <h2 class="major">Academic Documents</h2>
-                    <div class="pdf-grid-container" id="pdf-grid-container-documents"></div>
-                    <!-- Rest of the article content -->
-                    <p>paragraph 1</p>
-                    <p>paragraph 2</p>
-                </article>
-
-                <article id="service">
-                    <h2 class="major">Community Service</h2>
-                    <div class="pdf-grid-container" id="pdf-grid-container-service"></div>
-                    <!-- Rest of the article content -->
-                    <p>Paragraph 1</p>
-                </article>
-
-                <article id="work">
-                    <h2 class="major">Scholarly Work</h2>
-                    <div class="pdf-grid-container" id="pdf-grid-container-work"></div>
-                    <!-- Rest of the article content -->
-                    <p>Paragraph 1</p>
-                </article>
-
-                <article id="accomplishments">
-                    <h2 class="major">Accomplishments</h2>
-                    <div class="pdf-grid-container" id="pdf-grid-container-accomplishments"></div>
-                    <!-- Rest of the article content -->
-                    <p>Paragraph 1</p>
-                </article>
-
-            </div>
-
-            <footer id="footer">
-                <p class="copyright">&copy; <a href="https://lukebuonanno.github.io/bio/">Luke Buonanno</a>.</p>
-            </footer>
-
-        </div>
-
-        <!-- BG -->
-        <div id="bg"></div>
-
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="script.js"></script>
-
-        <script>
-            const pdfUrlsExperience = [
-                'loi.pdf',
-                'experience2.pdf',
-            ];
-
-            const pdfUrlsDocuments = [
-                'document1.pdf',
-                'document2.pdf',
-            ];
-
-            const pdfUrlsService = [
-                'service1.pdf',
-                'service2.pdf',
-            ];
-
-            const pdfUrlsWork = [
-                'work1.pdf',
-                'work2.pdf',
-            ];
-
-            const pdfUrlsAccomplishments = [
-                'accomplishments1.pdf',
-                'accomplishments2.pdf',
-            ];
-
-            // Function to create grid items
-            function createGridItems(containerId, pdfUrls) {
-                const gridContainer = document.getElementById(containerId);
-                pdfUrls.forEach((url, index) => {
-                    const gridItem = document.createElement('div');
-                    gridItem.classList.add('grid-item');
-
-                    const iframe = document.createElement('iframe');
-                    iframe.classList.add('pdf-preview');
-                    iframe.src = url;
-
-                    const previewImage = document.createElement('img');
-                    previewImage.classList.add('preview-image');
-                    previewImage.src = `generatePreviewImage.php?url=${encodeURIComponent(url)}`;
-
-                    const caption = document.createElement('div');
-                    caption.classList.add('caption');
-                    caption.textContent = `PDF ${index + 1}`;
-
-                    gridItem.appendChild(iframe);
-                    gridItem.appendChild(previewImage);
-                    gridItem.appendChild(caption);
-                    gridContainer.appendChild(gridItem);
-
-                    // Add click event listener to each grid item
-                    gridItem.addEventListener('click', () => {
-                        if (!gridItem.classList.contains('enlarged')) {
-                            gridItem.classList.add('enlarged');
-                            const closeBtn = document.createElement('button');
-                            closeBtn.classList.add('close-btn');
-                            closeBtn.textContent = 'X';
-                            closeBtn.addEventListener('click', () => {
-                                gridItem.classList.remove('enlarged');
-                                closeBtn.remove();
-                            });
-                            document.body.appendChild(closeBtn);
-                        }
-                    });
-                });
-            }
-
-            // Call the function to create grid items for each article
-            createGridItems('pdf-grid-container-experience', pdfUrlsExperience);
-            createGridItems('pdf-grid-container-documents', pdfUrlsDocuments);
-            createGridItems('pdf-grid-container-service', pdfUrlsService);
-            createGridItems('pdf-grid-container-work', pdfUrlsWork);
-            createGridItems('pdf-grid-container-accomplishments', pdfUrlsAccomplishments);
-        </script>
-    </body>
+</body>
 </html>
