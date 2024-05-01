@@ -14,7 +14,7 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-<body class="is-preload">
+<body class="is-preload" style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
 
 
     <div id="wrapper">
@@ -40,13 +40,22 @@
                             margin: 0;
                         }
 
-                        .grid-container {
-                            display: grid;
-                            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                            gap: 20px;
+                        .grid-item {
+                            position: relative;
                             align-items: center;
-                            justify-items: center; /* Center grid items horizontally */
+                            justify-items: center; /* This line is not needed if using flexbox on child elements */
+                            padding: 10px;
+                            border-radius: 10px;
+                            border: thick;
+                            transition: transform 0.3s ease;
+                            cursor: pointer;
+                            overflow: hidden;
+                            text-align: center; /* Center text content */
+                            display: flex; /* Wrap content in flexbox */
+                            justify-content: center; /* Center content horizontally */
+                            align-items: center; /* Center content vertically */
                         }
+
 
                         .grid-item {
                             position: relative;
