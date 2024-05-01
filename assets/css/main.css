@@ -1699,16 +1699,42 @@ input, select, textarea {
 	.button:hover {
 		background-color: #0056b3; /* Change the hover background color if needed */
 	}
-
-#header .carousel button {
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0 0.5rem; /* Adjust margin as needed */
+.carousel {
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto;
 }
 
-@media screen and (max-width: 480px) {
-	#header .carousel button {
-		display: block;
-		margin: 0.5rem auto; /* Adjust margin as needed */
+.prev, .next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+	transition: background-color 0.3s ease;
+}
+
+	.prev:hover, .next:hover {
+		background-color: rgba(0, 0, 0, 0.8);
 	}
+
+.slide-container {
+	display: flex;
+	overflow-x: hidden;
 }
+
+.slide {
+	flex: 0 0 auto;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+h3 {
+	margin-top: 0;
+}
+
