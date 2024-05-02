@@ -38,13 +38,16 @@
                             margin: 0;
                         }
 
-                        .grid-container {
-                            display: grid;
-                            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                        .grid-container
+
+                        {
+                            display: flex; /* Change display property to flex */
+                            flex-wrap: wrap; /* Allow items to wrap if they exceed container width */
+                            justify-content: center; /* Center items horizontally */
+                            align-items: center; /* Center items vertically */
                             gap: 20px;
-                            align-items: center;
-                            justify-items: center; /* Center grid items horizontally */
                         }
+
 
                         .grid-item {
                             position: relative;
@@ -80,7 +83,7 @@
                             position: fixed;
                             top: 20px;
                             right: 20px;
-                            left: 20px;
+                         
                             bottom: 20px;
                             z-index: 10000;
                             background-color: rgba(0, 0, 0, 0.5);
