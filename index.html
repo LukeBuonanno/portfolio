@@ -259,7 +259,7 @@
         ];
 
         // Function to create grid items
-        function createGridItems(containerId, pdfUrls) {
+        function createGridItems(containerId, pdfUrls, captions) {
             const gridContainer = document.getElementById(containerId);
             pdfUrls.forEach((url, index) => {
                 const gridItem = document.createElement('div');
@@ -275,7 +275,7 @@
 
                 const caption = document.createElement('div');
                 caption.classList.add('caption');
-                caption.textContent = `PDF ${index + 1}`;
+                caption.textContent = captions[index] || `PDF ${index + 1}`; // Use the provided caption or a default one
 
                 gridItem.appendChild(iframe);
                 gridItem.appendChild(previewImage);
@@ -299,12 +299,14 @@
             });
         }
 
+
         // Call the function to create grid items for each article
-        createGridItems('pdf-grid-container-experience', pdfUrlsExperience);
-        createGridItems('pdf-grid-container-documents', pdfUrlsDocuments);
-        createGridItems('pdf-grid-container-service', pdfUrlsService);
-        createGridItems('pdf-grid-container-work', pdfUrlsWork);
-        createGridItems('pdf-grid-container-accomplishments', pdfUrlsAccomplishments);
+        createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption']);
+        createGridItems('pdf-grid-container-documents', pdfUrlsDocuments, ['Document 1 Caption', 'Document 2 Caption']);
+        createGridItems('pdf-grid-container-service', pdfUrlsService, ['Service 1 Caption', 'Service 2 Caption']);
+        createGridItems('pdf-grid-container-work', pdfUrlsWork, ['Work 1 Caption', 'Work 2 Caption']);
+        createGridItems('pdf-grid-container-accomplishments', pdfUrlsAccomplishments, ['Accomplishment 1 Caption', 'Accomplishment 2 Caption']);
+
     </script>
 
     <!-- Scripts -->
