@@ -113,51 +113,53 @@
                                 'resume.pdf',
                             ];
 
+ 
                             // Function to create grid items
-                            function createGridItems() {
-                                const gridContainer = document.getElementById('grid-container');
+                                function createGridItems(containerId, pdfUrls, captions) {
+                                const gridContainer = document.getElementById(containerId);
                                 pdfUrls.forEach((url, index) => {
                                     const gridItem = document.createElement('div');
-                                    gridItem.classList.add('grid-item');
+                                gridItem.classList.add('grid-item');
 
-                                    const iframe = document.createElement('iframe');
-                                    iframe.classList.add('pdf-preview');
-                                    iframe.src = url;
+                                const iframe = document.createElement('iframe');
+                                iframe.classList.add('pdf-preview');
+                                iframe.src = url;
 
-                                    const previewImage = document.createElement('img');
-                                    previewImage.classList.add('preview-image');
-                                    previewImage.src = `generatePreviewImage.php?url=${encodeURIComponent(url)}`;
+                                const previewImage = document.createElement('img');
+                                previewImage.classList.add('preview-image');
+                                previewImage.src = `generatePreviewImage.php?url=${encodeURIComponent(url)}`;
 
-                                    const caption = document.createElement('div');
-                                    caption.classList.add('caption');
-                                    caption.textContent = `PDF ${index + 1}`;
+                                const caption = document.createElement('div');
+                                caption.classList.add('caption');
+                                caption.textContent = captions[index] || `PDF ${index + 1}`; // Use the provided caption or a default one
 
-                                    gridItem.appendChild(iframe);
-                                    gridItem.appendChild(previewImage);
-                                    gridItem.appendChild(caption);
-                                    gridContainer.appendChild(gridItem);
+                                gridItem.appendChild(iframe);
+                                gridItem.appendChild(previewImage);
+                                gridItem.appendChild(caption);
+                                gridContainer.appendChild(gridItem);
 
                                     // Add click event listener to each grid item
                                     gridItem.addEventListener('click', () => {
                                         if (!gridItem.classList.contains('enlarged')) {
-                                            gridItem.classList.add('enlarged');
-                                            const closeBtn = document.createElement('button');
-                                            closeBtn.classList.add('close-btn');
-                                            closeBtn.textContent = 'X';
+                                    gridItem.classList.add('enlarged');
+                                const closeBtn = document.createElement('button');
+                                closeBtn.classList.add('close-btn');
+                                closeBtn.textContent = 'X';
                                             closeBtn.addEventListener('click', () => {
-                                                gridItem.classList.remove('enlarged');
-                                                closeBtn.remove();
+                                    gridItem.classList.remove('enlarged');
+                                closeBtn.remove();
                                             });
-                                            document.body.appendChild(closeBtn);
+                                document.body.appendChild(closeBtn);
                                         }
                                     });
                                 });
                             }
 
-                            // Call the function to create grid items
-                            createGridItems();
+                                // Call the function to create grid items
+                                createGridItems('grid-container', ['loi.pdf', 'resume.pdf'], ['Letter of Intent', 'Resume']);
                         </script>
-                </div>
+
+</div>
             </div>
             <nav>
                 <ul>
