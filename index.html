@@ -46,7 +46,7 @@
                             justify-content: center; /* Center items horizontally */
                             align-items: center; /* Center items vertically */
                             gap: 20px;
-                            width: 1000
+
                         }
 
 
@@ -108,6 +108,25 @@
                         .grid-item.enlarged .pdf-preview {
                             width: 100%;
                             height: 100%;
+                        } 
+                        .enlarged-pdf
+
+                        {
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%; /* Adjust the width as desired */
+                            height: 100%; /* Adjust the height as desired */
+                            z-index: 9999;
+                            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+                            border-radius: 10px; /* Border radius for the enlarged PDF */
+                            margin: 10% auto; /* Center the enlarged PDF vertically and horizontally */
+                        }
+
+                        .enlarged-pdf .pdf-preview {
+                            width: 100%;
+                            height: 100%;
+                        }
                         }
                     </style>
                
@@ -146,17 +165,23 @@
                                 gridContainer.appendChild(gridItem);
 
                                     // Add click event listener to each grid item
+                                    // Add click event listener to each grid item
                                     gridItem.addEventListener('click', () => {
                                         if (!gridItem.classList.contains('enlarged')) {
-                                    gridItem.classList.add('enlarged');
-                                const closeBtn = document.createElement('button');
-                                closeBtn.classList.add('close-btn');
-                                closeBtn.textContent = 'X';
+                                            gridItem.classList.add('enlarged');
+                                            gridItem.classList.add('enlarged-pdf'); // Apply the new class for enlarged PDF
+                                            const closeBtn = document.createElement('button');
+                                            closeBtn.classList.add('close-btn');
+                                            closeBtn.textContent = 'X';
                                             closeBtn.addEventListener('click', () => {
-                                    gridItem.classList.remove('enlarged');
-                                closeBtn.remove();
+                                                gridItem.classList.remove('enlarged');
+                                                gridItem.classList.remove('enlarged-pdf'); // Remove the enlarged PDF class
+                                                closeBtn.remove();
                                             });
-                                document.body.appendChild(closeBtn);
+                                            document.body.appendChild(closeBtn);
+                                        }
+                                    });
+
                                         }
                                     });
                                 });
