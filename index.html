@@ -165,23 +165,17 @@
                                 gridContainer.appendChild(gridItem);
 
                                     // Add click event listener to each grid item
-                                    // Add click event listener to each grid item
                                     gridItem.addEventListener('click', () => {
                                         if (!gridItem.classList.contains('enlarged')) {
-                                            gridItem.classList.add('enlarged');
-                                            gridItem.classList.add('enlarged-pdf'); // Apply the new class for enlarged PDF
-                                            const closeBtn = document.createElement('button');
-                                            closeBtn.classList.add('close-btn');
-                                            closeBtn.textContent = 'X';
+                                    gridItem.classList.add('enlarged');
+                                const closeBtn = document.createElement('button');
+                                closeBtn.classList.add('close-btn');
+                                closeBtn.textContent = 'X';
                                             closeBtn.addEventListener('click', () => {
-                                                gridItem.classList.remove('enlarged');
-                                                gridItem.classList.remove('enlarged-pdf'); // Remove the enlarged PDF class
-                                                closeBtn.remove();
+                                    gridItem.classList.remove('enlarged');
+                                closeBtn.remove();
                                             });
-                                            document.body.appendChild(closeBtn);
-                                        }
-                                    });
-
+                                document.body.appendChild(closeBtn);
                                         }
                                     });
                                 });
