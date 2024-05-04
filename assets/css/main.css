@@ -1545,7 +1545,7 @@ input, select, textarea {
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 400rem;
+			width: 40rem;
 			max-width: 100%;
 
 			background-color: rgba(27, 31, 34, 0.85);
@@ -1670,21 +1670,7 @@ input, select, textarea {
 .document {
 	width: 48%; /* Adjust as needed */
 }
-.carousel-inner {
-	display: flex;
-	transition: transform 0.5s ease;
-	overflow: hidden; /* Add this line to hide overflow */
-}
 
-.slide {
-	flex: 0 0 auto;
-	width: 100%;
-	overflow: hidden; /* Hide overflow for each slide */
-}
-
-	.slide:not(.current) {
-		display: none; /* Hide all slides except the current one */
-	}
 .button {
 	display: inline-block;
 	background-color: #007bff; /* Change the background color to your preference */
