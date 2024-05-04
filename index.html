@@ -38,9 +38,7 @@
                             margin: 0;
                         }
 
-                        .grid-container
-
-                        {
+                        .grid-container {
                             display: flex; /* Change display property to flex */
                             flex-wrap: wrap; /* Allow items to wrap if they exceed container width */
                             justify-content: center; /* Center items horizontally */
@@ -71,14 +69,12 @@
                                 z-index: 9999;
                                 background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
                                 border-radius: 0;
-
                             }
 
                         .close-btn {
                             position: fixed;
                             top: 20px;
                             right: 20px;
-                         
                             bottom: 20px;
                             z-index: 10000;
                             background-color: rgba(0, 0, 0, 0.5);
@@ -86,6 +82,7 @@
                             border: none;
                             cursor: pointer;
                         }
+
                         .grid-item .pdf-preview {
                             width: 100%; /* Set width to 100% */
                             height: auto; /* Let the height adjust proportionally */
@@ -103,28 +100,28 @@
                             color: rgba(255, 255, 255, 0.9); /* Black color for caption text */
                             margin-top: 10px; /* Add margin to separate caption from grid item */
                         }
+
                         .grid-item.enlarged .pdf-preview {
                             width: 100%;
                             height: 100%;
                         }
                     </style>
-                   
-                    </head>
-                    <body>
-                        <div class="grid-container" id="grid-container"></div>
 
-                        <script>
-                            const pdfUrls = [
-                                'loi.pdf',
-                                'resume.pdf',
-                            ];
 
- 
-                            // Function to create grid items
-                                function createGridItems(containerId, pdfUrls, captions) {
-                                const gridContainer = document.getElementById(containerId);
-                                pdfUrls.forEach((url, index) => {
-                                    const gridItem = document.createElement('div');
+                    <div class="grid-container" id="grid-container"></div>
+
+                    <script>
+                        const pdfUrls = [
+                            'loi.pdf',
+                            'resume.pdf',
+                        ];
+
+
+                        // Function to create grid items
+                        function createGridItems(containerId, pdfUrls, captions) {
+                            const gridContainer = document.getElementById(containerId);
+                            pdfUrls.forEach((url, index) => {
+                                const gridItem = document.createElement('div');
                                 gridItem.classList.add('grid-item');
 
                                 const iframe = document.createElement('iframe');
@@ -133,7 +130,7 @@
 
                                 const previewImage = document.createElement('img');
                                 previewImage.classList.add('preview-image');
-                            
+
 
                                 const caption = document.createElement('div');
                                 caption.classList.add('caption');
@@ -144,31 +141,31 @@
                                 gridItem.appendChild(caption);
                                 gridContainer.appendChild(gridItem);
 
-                                    // Add click event listener to each grid item
-                                    gridItem.addEventListener('click', () => {
-                                        if (!gridItem.classList.contains('enlarged')) {
-                                    gridItem.classList.add('enlarged');
-                                const closeBtn = document.createElement('button');
-                                closeBtn.classList.add('close-btn');
-                                closeBtn.textContent = 'X';
-                                            closeBtn.addEventListener('click', () => {
-                                    gridItem.classList.remove('enlarged');
-                                closeBtn.remove();
-                                            });
-                                document.body.appendChild(closeBtn);
-                                        }
-                                    });
+                                // Add click event listener to each grid item
+                                gridItem.addEventListener('click', () => {
+                                    if (!gridItem.classList.contains('enlarged')) {
+                                        gridItem.classList.add('enlarged');
+                                        const closeBtn = document.createElement('button');
+                                        closeBtn.classList.add('close-btn');
+                                        closeBtn.textContent = 'X';
+                                        closeBtn.addEventListener('click', () => {
+                                            gridItem.classList.remove('enlarged');
+                                            closeBtn.remove();
+                                        });
+                                        document.body.appendChild(closeBtn);
+                                    }
                                 });
-                            }
+                            });
+                        }
 
-                                // Call the function to create grid items
-                            
-                            createGridItems('grid-container', ['loi.pdf', 'resume.pdf'], ['Letter of Introduction', 'Resume']);
+                        // Call the function to create grid items
+
+                        createGridItems('grid-container', ['loi.pdf', 'resume.pdf'], ['Letter of Introduction', 'Resume']);
 
 
-                        </script>
+                    </script>
 
-</div>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -185,7 +182,7 @@
 
 
 
-              <div id="main">
+        <div id="main">
 
             <article id="experiance">
                 <h2 class="major">Influential Experience</h2>
@@ -287,7 +284,7 @@
 
                 const previewImage = document.createElement('img');
                 previewImage.classList.add('preview-image');
-             
+
 
                 const caption = document.createElement('div');
                 caption.classList.add('caption');
