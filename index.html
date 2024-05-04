@@ -47,9 +47,20 @@
                             align-items: center; /* Center items vertically */
                             gap: 20px;
                         }
-
+                        .pdf-preview {
+                            width: 100%; /* Set width to 100% */
+                            height: auto; /* Let the height adjust proportionally */
+                            max-width: 150px; /* Set a maximum width to prevent excessively wide squares */
+                            object-fit: contain; /* Maintain aspect ratio while fitting within the container */
+                            border-radius: 25px; /* Optional: Add border radius for rounded corners */
+                        }
 
                         .grid-item {
+                            width: 100%; /* Set width to 100% */
+                            height: auto; /* Let the height adjust proportionally */
+                            max-width: 150px; /* Set a maximum width to prevent excessively wide squares */
+                            object-fit: contain; /* Maintain aspect ratio while fitting within the container */
+                            border-radius: 25px; /* Optional: Add border radius for rounded corners */
                             position: relative;
                             align-items: center;
                             justify-items: center;
@@ -74,11 +85,6 @@
                                 padding: 20px;
                             }
 
-                        .pdf-preview {
-                            width: 100%;
-                            height: calc(100% - 40px); /* Adjust height for close button */
-                        }
-
                         .close-btn {
                             position: fixed;
                             top: 20px;
@@ -92,13 +98,7 @@
                             padding: 10px 10px;
                             cursor: pointer;
                         }
-                        .grid-item .pdf-preview {
-                            width: 100%; /* Set width to 100% */
-                            height: auto; /* Let the height adjust proportionally */
-                            max-width: 150px; /* Set a maximum width to prevent excessively wide squares */
-                            object-fit: contain; /* Maintain aspect ratio while fitting within the container */
-                            border-radius: 25px; /* Optional: Add border radius for rounded corners */
-                        }
+                        
 
 
 
