@@ -146,18 +146,17 @@
                                 gridContainer.appendChild(gridItem);
 
                                     // Add click event listener to each grid item
-                                    const closeBtn = document.createElement('button');
-                                    closeBtn.classList.add('close-btn');
-                                    closeBtn.textContent = 'X';
-                                    closeBtn.addEventListener('click', () => {
-                                        const parentGridItem = closeBtn.closest('.grid-item');
-                                        parentGridItem.classList.remove('enlarged'); // Remove enlarged class from parent grid item
-                                        closeBtn.remove(); // Remove close button itself
-                                    });
-                                    document.body.appendChild(closeBtn);
-
-
-
+                                    gridItem.addEventListener('click', () => {
+                                        if (!gridItem.classList.contains('enlarged')) {
+                                    gridItem.classList.add('enlarged');
+                                const closeBtn = document.createElement('button');
+                                closeBtn.classList.add('close-btn');
+                                closeBtn.textContent = 'X';
+                                            closeBtn.addEventListener('click', () => {
+                                    gridItem.classList.remove('enlarged');
+                                closeBtn.remove();
+                                            });
+                                document.body.appendChild(closeBtn);
                                         }
                                     });
                                 });
