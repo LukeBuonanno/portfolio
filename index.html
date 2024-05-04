@@ -38,9 +38,7 @@
                             margin: 0;
                         }
 
-                        .grid-container
-
-                        {
+                        .grid-container {
                             display: flex; /* Change display property to flex */
                             flex-wrap: wrap; /* Allow items to wrap if they exceed container width */
                             justify-content: center; /* Center items horizontally */
@@ -78,15 +76,14 @@
                             position: fixed;
                             top: 20px;
                             right: 20px;
-                         
                             bottom: 20px;
                             z-index: 10000;
                             background-color: rgba(0, 0, 0, 0.5);
                             color: #fff;
                             border: none;
-
                             cursor: pointer;
                         }
+
                         .grid-item .pdf-preview {
                             width: 100%; /* Set width to 100% */
                             height: auto; /* Let the height adjust proportionally */
@@ -104,6 +101,7 @@
                             color: rgba(255, 255, 255, 0.9); /* Black color for caption text */
                             margin-top: 10px; /* Add margin to separate caption from grid item */
                         }
+
                         .grid-item.enlarged .pdf-preview {
                             width: 100%;
                             height: 100%;
@@ -120,56 +118,56 @@
                                 'resume.pdf',
                             ];
 
- 
+
                             // Function to create grid items
-                                function createGridItems(containerId, pdfUrls, captions) {
+                            function createGridItems(containerId, pdfUrls, captions) {
                                 const gridContainer = document.getElementById(containerId);
                                 pdfUrls.forEach((url, index) => {
                                     const gridItem = document.createElement('div');
-                                gridItem.classList.add('grid-item');
+                                    gridItem.classList.add('grid-item');
 
-                                const iframe = document.createElement('iframe');
-                                iframe.classList.add('pdf-preview');
-                                iframe.src = url;
+                                    const iframe = document.createElement('iframe');
+                                    iframe.classList.add('pdf-preview');
+                                    iframe.src = url;
 
-                                const previewImage = document.createElement('img');
-                                previewImage.classList.add('preview-image');
-                            
+                                    const previewImage = document.createElement('img');
+                                    previewImage.classList.add('preview-image');
 
-                                const caption = document.createElement('div');
-                                caption.classList.add('caption');
-                                caption.textContent = captions[index] || `PDF ${index + 1}`; // Use the provided caption or a default one
 
-                                gridItem.appendChild(iframe);
-                                gridItem.appendChild(previewImage);
-                                gridItem.appendChild(caption);
-                                gridContainer.appendChild(gridItem);
+                                    const caption = document.createElement('div');
+                                    caption.classList.add('caption');
+                                    caption.textContent = captions[index] || `PDF ${index + 1}`; // Use the provided caption or a default one
+
+                                    gridItem.appendChild(iframe);
+                                    gridItem.appendChild(previewImage);
+                                    gridItem.appendChild(caption);
+                                    gridContainer.appendChild(gridItem);
 
                                     // Add click event listener to each grid item
                                     gridItem.addEventListener('click', () => {
                                         if (!gridItem.classList.contains('enlarged')) {
-                                    gridItem.classList.add('enlarged');
-                                const closeBtn = document.createElement('button');
-                                closeBtn.classList.add('close-btn');
-                                closeBtn.textContent = 'X';
+                                            gridItem.classList.add('enlarged');
+                                            const closeBtn = document.createElement('button');
+                                            closeBtn.classList.add('close-btn');
+                                            closeBtn.textContent = 'X';
                                             closeBtn.addEventListener('click', () => {
-                                    gridItem.classList.remove('enlarged');
-                                closeBtn.remove();
+                                                gridItem.classList.remove('enlarged');
+                                                closeBtn.remove();
                                             });
-                                document.body.appendChild(closeBtn);
+                                            document.body.appendChild(closeBtn);
                                         }
                                     });
                                 });
                             }
 
-                                // Call the function to create grid items
-                            
+                            // Call the function to create grid items
+
                             createGridItems('grid-container', ['loi.pdf', 'resume.pdf'], ['Letter of Introduction', 'Resume']);
 
 
                         </script>
 
-</div>
+                </div>
             </div>
             <nav>
                 <ul>
@@ -186,7 +184,7 @@
 
 
 
-              <div id="main">
+        <div id="main">
 
             <article id="experiance">
                 <h2 class="major">Influential Experience</h2>
@@ -275,56 +273,58 @@
             'accomplishments2.pdf',
         ];
 
-        // Function to create grid items
-        function createGridItems(containerId, pdfUrls, captions) {
+            function createGridItems(containerId, pdfUrls, captions) {
             const gridContainer = document.getElementById(containerId);
             pdfUrls.forEach((url, index) => {
                 const gridItem = document.createElement('div');
-                gridItem.classList.add('grid-item');
+            gridItem.classList.add('grid-item');
 
-                const iframe = document.createElement('iframe');
-                iframe.classList.add('pdf-preview');
-                iframe.src = url;
+            const iframe = document.createElement('iframe');
+            iframe.classList.add('pdf-preview');
+            iframe.src = url;
 
-                const previewImage = document.createElement('img');
-                previewImage.classList.add('preview-image');
-             
+            const previewContainer = document.createElement('div'); // Container for the preview
+            previewContainer.classList.add('pdf-preview-container');
 
-                const caption = document.createElement('div');
-                caption.classList.add('caption');
-                caption.textContent = captions[index] || `PDF ${index + 1}`; // Use the provided caption or a default one
+            const previewImage = document.createElement('img');
+            previewImage.classList.add('pdf-preview');
+            previewImage.src = url; // Use the PDF URL as the source for the preview image
 
-                gridItem.appendChild(iframe);
-                gridItem.appendChild(previewImage);
-                gridItem.appendChild(caption);
-                gridContainer.appendChild(gridItem);
+            const caption = document.createElement('div');
+            caption.classList.add('caption');
+            caption.textContent = captions[index] || `PDF ${index + 1}`; // Use the provided caption or a default one
+
+            previewContainer.appendChild(previewImage);
+            gridItem.appendChild(iframe);
+            gridItem.appendChild(previewContainer);
+            gridItem.appendChild(caption);
+            gridContainer.appendChild(gridItem);
 
                 // Add click event listener to each grid item
                 gridItem.addEventListener('click', () => {
                     if (!gridItem.classList.contains('enlarged')) {
-                        gridItem.classList.add('enlarged');
-                        const closeBtn = document.createElement('button');
-                        closeBtn.classList.add('close-btn');
-                        closeBtn.textContent = 'X';
+                gridItem.classList.add('enlarged');
+            const closeBtn = document.createElement('button');
+            closeBtn.classList.add('close-btn');
+            closeBtn.textContent = 'X';
                         closeBtn.addEventListener('click', () => {
-                            gridItem.classList.remove('enlarged');
-                            closeBtn.remove();
+                gridItem.classList.remove('enlarged');
+            closeBtn.remove();
                         });
-                        document.body.appendChild(closeBtn);
+            document.body.appendChild(closeBtn);
                     }
                 });
             });
         }
 
-
-        // Call the function to create grid items for each article
-        createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption']);
-        createGridItems('pdf-grid-container-documents', pdfUrlsDocuments, ['Document 1 Caption', 'Document 2 Caption']);
-        createGridItems('pdf-grid-container-service', pdfUrlsService, ['Service 1 Caption', 'Service 2 Caption']);
-        createGridItems('pdf-grid-container-work', pdfUrlsWork, ['Work 1 Caption', 'Work 2 Caption']);
-        createGridItems('pdf-grid-container-accomplishments', pdfUrlsAccomplishments, ['Accomplishment 1 Caption', 'Accomplishment 2 Caption']);
-
+            // Call the function to create grid items for each article
+            createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption']);
+            createGridItems('pdf-grid-container-documents', pdfUrlsDocuments, ['Document 1 Caption', 'Document 2 Caption']);
+            createGridItems('pdf-grid-container-service', pdfUrlsService, ['Service 1 Caption', 'Service 2 Caption']);
+            createGridItems('pdf-grid-container-work', pdfUrlsWork, ['Work 1 Caption', 'Work 2 Caption']);
+            createGridItems('pdf-grid-container-accomplishments', pdfUrlsAccomplishments, ['Accomplishment 1 Caption', 'Accomplishment 2 Caption']);
     </script>
+
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
