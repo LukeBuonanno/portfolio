@@ -149,12 +149,13 @@
                                     const closeBtn = document.createElement('button');
                                     closeBtn.classList.add('close-btn');
                                     closeBtn.textContent = 'X';
-                                    closeBtn.addEventListener('click', (event) => {
-                                        event.stopPropagation(); // Prevent click event from reaching the grid item
-                                        gridItem.classList.remove('enlarged'); // Remove enlarged class from grid item
+                                    closeBtn.addEventListener('click', () => {
+                                        const parentGridItem = closeBtn.closest('.grid-item');
+                                        parentGridItem.classList.remove('enlarged'); // Remove enlarged class from parent grid item
                                         closeBtn.remove(); // Remove close button itself
                                     });
                                     document.body.appendChild(closeBtn);
+
 
 
                                         }
