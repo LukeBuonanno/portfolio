@@ -93,8 +93,13 @@
                             cursor: pointer;
                         }
                         .grid-item .pdf-preview {
-                            border-radius: 25px;
+                            width: 100%;
+                            height: 100%; /* Change height to be the same as width */
+                            max-height: 200px; /* Set a maximum height to prevent excessively tall squares */
+                            object-fit: contain; /* Maintain aspect ratio while fitting within the container */
+                            border-radius: 25px; /* Optional: Add border radius for rounded corners */
                         }
+
 
                         .caption {
                             font-size: 14px;
