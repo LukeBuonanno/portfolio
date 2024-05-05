@@ -1194,7 +1194,7 @@ body.is-preload #bg:before {
 	width: 100%;
 	padding: 4rem 2rem;
 	z-index: 3;
-	overflow: hidden;
+	overflow-x: auto;
 }
 
 	#wrapper:before {
@@ -1309,7 +1309,7 @@ body.is-preload #bg:before {
 			transition-delay: 0.25s;
 			padding: 3rem 2rem;
 			max-height: 40rem;
-			overflow: hidden;
+			overflow: auto-y;
 		}
 
 			#header .content .inner > :last-child {
@@ -1543,7 +1543,6 @@ body.is-preload #header {
 			transform: translateY(0);
 			opacity: 1;
 			width: 100vw;
-			overflow-x: auto; /* Enable vertical scrollbar if content overflows */
 		}
 
 		#main article .close {
