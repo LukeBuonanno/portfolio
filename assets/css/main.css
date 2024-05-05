@@ -1533,7 +1533,7 @@ body.is-preload #header {
 		background-color: rgba(27, 31, 34, 0.85);
 		border-radius: 4px;
 		opacity: 0;
-		overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+		overflow-x: auto; /* Enable vertical scrollbar if content overflows */
 	}
 
 		#main article.active {
@@ -1542,7 +1542,7 @@ body.is-preload #header {
 			-ms-transform: translateY(0);
 			transform: translateY(0);
 			opacity: 1;
-			width: 100vw
+			width: 100vw;
 		}
 
 		#main article .close {
