@@ -925,7 +925,7 @@ ul.icons {
 
 .table-wrapper {
 	-webkit-overflow-scrolling: touch;
-	overflow-x: auto;
+	overflow-y: auto;
 }
 
 table {
@@ -1194,7 +1194,7 @@ body.is-preload #bg:before {
 	width: 100%;
 	padding: 4rem 2rem;
 	z-index: 3;
-	overflow: hidden;
+	overflow-y: auto;
 }
 
 	#wrapper:before {
@@ -1309,7 +1309,7 @@ body.is-preload #bg:before {
 			transition-delay: 0.25s;
 			padding: 3rem 2rem;
 			max-height: 40rem;
-			overflow: hidden;
+			overflow-y: auto;
 		}
 
 			#header .content .inner > :last-child {
