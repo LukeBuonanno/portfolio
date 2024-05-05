@@ -60,7 +60,7 @@
                             border: thick;
                             transition: transform 0.3s ease;
                             cursor: pointer;
-          
+                            overflow-y: auto; /* Enable vertical scrollbar if content overflows */
                             text-align: center; /* Center text content */
                         }
 
@@ -220,16 +220,7 @@
 
             <article id="experiance">
                 <h2 class="major">Influential Experience</h2>
-                <nav>
-                    <ul>
-                        <li><a href="#experiance">Influential Experiance</a></li>
-                        <li><a href="#accomplishments">Accomplishments</a></li>
-                        <li><a href="#work">Scholarly Work</a></li>
-                        <li><a href="#documents">Academic Documents</a></li>
-                        <li><a href="#service">Community Service</a></li>
-
-                    </ul>
-                </nav>                
+                <div class="grid-container" id="pdf-grid-container-experience"></div>
                 <!-- Rest of the article content -->
             </article>
 
