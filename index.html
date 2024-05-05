@@ -130,9 +130,12 @@
                         }
 
                             .grid-item.enlarged .pdf-preview {
-                                width: 100%; /* Set width to 100% */
+                                width: auto; /* Let the width adjust based on content */
                                 height: calc(100% - 40px); /* Adjust height for close button */
+                                max-width: 90%; /* Limit maximum width to 90% of the viewport width */
+                                max-height: 90%; /* Limit maximum height to 90% of the viewport height */
                             }
+
                     </style>
                     </head>
                     <body>
