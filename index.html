@@ -94,7 +94,7 @@
                             cursor: pointer;
                         }
 
-                        .grid-item {
+                        .grid-item .pdf-preview {
                             width: 100%; /* Set width to 100% */
                             height: auto; /* Let the height adjust proportionally */
                             max-width: 200px; /* Set a maximum width to prevent excessively wide squares */
@@ -102,7 +102,12 @@
                             border-radius: 25px; /* Optional: Add border radius for rounded corners */
                         }
 
-
+                        .pdf-preview {
+                            width: 100%; /* Set width to 100% */
+                            height: auto; /* Let the height adjust proportionally */
+                            object-fit: contain; /* Maintain aspect ratio while fitting within the container */
+                            border-radius: 25px; /* Optional: Add border radius for rounded corners */
+                        }
 
 
                         .caption {
