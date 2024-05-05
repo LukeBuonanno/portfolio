@@ -925,7 +925,6 @@ ul.icons {
 
 .table-wrapper {
 	-webkit-overflow-scrolling: touch;
-	overflow-y: auto;
 }
 
 table {
@@ -1194,7 +1193,7 @@ body.is-preload #bg:before {
 	width: 100%;
 	padding: 4rem 2rem;
 	z-index: 3;
-	overflow-y: auto;
+
 }
 
 	#wrapper:before {
@@ -1309,7 +1308,7 @@ body.is-preload #bg:before {
 			transition-delay: 0.25s;
 			padding: 3rem 2rem;
 			max-height: 40rem;
-			overflow-y: auto;
+	
 		}
 
 			#header .content .inner > :last-child {
@@ -1542,6 +1541,9 @@ body.is-preload #header {
 			transform: translateY(0);
 			opacity: 1;
 			width: 100vw;
+
+
+
 		}
 
 		#main article .close {
@@ -1553,7 +1555,7 @@ body.is-preload #header {
 			height: 4rem;
 			cursor: pointer;
 			text-indent: 4rem;
-			overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+
 			white-space: nowrap;
 		}
 
