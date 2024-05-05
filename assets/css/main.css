@@ -1541,7 +1541,7 @@ body.is-preload #header {
 			-ms-transform: translateY(0);
 			transform: translateY(0);
 			opacity: 1;
-			width: 100000rem
+			width: 100000remover
 		}
 
 		#main article .close {
@@ -1553,7 +1553,7 @@ body.is-preload #header {
 			height: 4rem;
 			cursor: pointer;
 			text-indent: 4rem;
-			overflow: hidden;
+			overflow-y: auto; /* Enable vertical scrollbar if content overflows */
 			white-space: nowrap;
 		}
 
@@ -1654,21 +1654,7 @@ body.is-preload #footer {
 	width: 48%; /* Adjust as needed */
 }
 
-.carousel-inner {
-	display: flex;
-	transition: transform 0.5s ease;
-	overflow: hidden; /* Add this line to hide overflow */
-}
 
-.slide {
-	flex: 0 0 auto;
-	width: 100%;
-	overflow: hidden; /* Hide overflow for each slide */
-}
-
-	.slide:not(.current) {
-		display: none; /* Hide all slides except the current one */
-	}
 
 .button {
 	display: inline-block;

@@ -60,7 +60,7 @@
                             border: thick;
                             transition: transform 0.3s ease;
                             cursor: pointer;
-                            overflow: hidden;
+                            overflow-y: auto; /* Enable vertical scrollbar if content overflows */
                             text-align: center; /* Center text content */
                         }
 
@@ -348,7 +348,7 @@
 
 
         // Call the function to create grid items for each article
-        createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption']);
+        createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption', '','','','','','']);
         createGridItems('pdf-grid-container-documents', pdfUrlsDocuments, ['Document 1 Caption', 'Document 2 Caption']);
         createGridItems('pdf-grid-container-service', pdfUrlsService, ['Service 1 Caption', 'Service 2 Caption']);
         createGridItems('pdf-grid-container-work', pdfUrlsWork, ['Work 1 Caption', 'Work 2 Caption']);
