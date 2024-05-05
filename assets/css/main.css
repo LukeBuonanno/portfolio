@@ -1194,7 +1194,7 @@ body.is-preload #bg:before {
 	width: 100%;
 	padding: 4rem 2rem;
 	z-index: 3;
-	overflow-x: auto;
+	overflow: hidden;
 }
 
 	#wrapper:before {
@@ -1309,7 +1309,7 @@ body.is-preload #bg:before {
 			transition-delay: 0.25s;
 			padding: 3rem 2rem;
 			max-height: 40rem;
-			overflow: auto-y;
+			overflow: hidden;
 		}
 
 			#header .content .inner > :last-child {
@@ -1533,7 +1533,6 @@ body.is-preload #header {
 		background-color: rgba(27, 31, 34, 0.85);
 		border-radius: 4px;
 		opacity: 0;
-		overflow-x: auto; /* Enable vertical scrollbar if content overflows */
 	}
 
 		#main article.active {
@@ -1554,7 +1553,7 @@ body.is-preload #header {
 			height: 4rem;
 			cursor: pointer;
 			text-indent: 4rem;
-	
+			overflow-y: auto; /* Enable vertical scrollbar if content overflows */
 			white-space: nowrap;
 		}
 
