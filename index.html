@@ -221,9 +221,9 @@
                 <h2 class="major">Influential Experience</h2>
                 <nav>
                     <ul>
-                        <li><a href="#evaluation">Shadow Evaluations</a></li>
-                        <li><a href="#reflect">Shadow Reflections</a></li>
-                        <li><a href="#work">Scholarly Work</a></li>
+                        <li><a href="#evaluation">Shadow Evaluation Forms</a></li>
+                        <li><a href="#reflect">Shadow Reflection Forms</a></li>
+                        <li><a href="#tour">Tour Reflection Forms</a></li>
                         <li><a href="#documents">Academic Documents</a></li>
                         <li><a href="#service">Community Service</a></li>
 
@@ -237,6 +237,9 @@
             </article>
             <article id="reflect">
                 <div class="grid-container" id="pdf-grid-container-reflect"></div>
+            </article>
+            <article id="tour">
+                <div class="grid-container" id="pdf-grid-container-tour"></div>
             </article>
             <article id="documents">
                 <h2 class="major">Academic Documents</h2>
@@ -318,7 +321,26 @@
             'ShadowReflections/SR16.pdf',
             'ShadowReflections/SR17.pdf',
         ];
+        const pdfUrlstour = [
 
+            'ShadowReflections/SR1.pdf',
+            'ShadowReflections/SR2.pdf',
+            'ShadowReflections/SR3.pdf',
+            'ShadowReflections/SR4.pdf',
+            'ShadowReflections/SR5.pdf',
+            'ShadowReflections/SR6.pdf',
+            'ShadowReflections/SR7.pdf',
+            'ShadowReflections/SR8.pdf',
+            'ShadowReflections/SR9.pdf',
+            'ShadowReflections/SR10.pdf',
+            'ShadowReflections/SR11.pdf',
+            'ShadowReflections/SR12.pdf',
+            'ShadowReflections/SR13.pdf',
+            'ShadowReflections/SR14.pdf',
+            'ShadowReflections/SR15.pdf',
+            'ShadowReflections/SR16.pdf',
+            'ShadowReflections/SR17.pdf',
+        ];
         const pdfUrlsDocuments = [
             'document1.pdf',
             'document2.pdf',
@@ -384,6 +406,7 @@
         // Call the function to create grid items for each article
         createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption', '', '', '', '', '', '']);
         createGridItems('pdf-grid-container-reflect', pdfUrlreflect, ['Experience 1 Caption', 'Experience 2 Caption', '', '', '', '', '', '']);
+        createGridItems('pdf-grid-container-tour', pdfUrltour, ['Experience 1 Caption', 'Experience 2 Caption', '', '', '', '', '', '']);
         createGridItems('pdf-grid-container-documents', pdfUrlsDocuments, ['Document 1 Caption', 'Document 2 Caption']);
         createGridItems('pdf-grid-container-service', pdfUrlsService, ['Service 1 Caption', 'Service 2 Caption']);
         createGridItems('pdf-grid-container-work', pdfUrlsWork, ['Work 1 Caption', 'Work 2 Caption']);
