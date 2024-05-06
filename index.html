@@ -229,11 +229,14 @@
 
                     </ul>
                 </nav>
-                
+
                 <!-- Rest of the article content -->
             </article>
             <article id="evaluation">
                 <div class="grid-container" id="pdf-grid-container-experience"></div>
+            </article>
+            <article id="reflect">
+                <div class="grid-container" id="pdf-grid-container-reflect"></div>
             </article>
             <article id="documents">
                 <h2 class="major">Academic Documents</h2>
@@ -294,7 +297,8 @@
             'SpeakerEvaluation/se11.pdf',
             'SpeakerEvaluation/se12.pdf',
             'SpeakerEvaluation/se13.pdf',
-
+            ]
+        const pdfUrlsreflect = [
 
             'ShadowReflections/SR1.pdf',
             'ShadowReflections/SR2.pdf',
@@ -378,7 +382,8 @@
 
 
         // Call the function to create grid items for each article
-        createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption', '','','','','','']);
+        createGridItems('pdf-grid-container-experience', pdfUrlsExperience, ['Experience 1 Caption', 'Experience 2 Caption', '', '', '', '', '', '']);
+        createGridItems('pdf-grid-container-reflect', pdfUrlreflect, ['Experience 1 Caption', 'Experience 2 Caption', '', '', '', '', '', '']);
         createGridItems('pdf-grid-container-documents', pdfUrlsDocuments, ['Document 1 Caption', 'Document 2 Caption']);
         createGridItems('pdf-grid-container-service', pdfUrlsService, ['Service 1 Caption', 'Service 2 Caption']);
         createGridItems('pdf-grid-container-work', pdfUrlsWork, ['Work 1 Caption', 'Work 2 Caption']);
