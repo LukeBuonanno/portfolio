@@ -1541,7 +1541,8 @@ body.is-preload #header {
 			transform: translateY(0);
 			opacity: 1;
 			width: 100vw;
-			overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+			overflow: hidden;
+
 		}
 
 		#main article .close {
